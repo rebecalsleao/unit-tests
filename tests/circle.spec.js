@@ -39,8 +39,7 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
   });
 
   it('Verificar se quando a função não recebe nenhum parâmetro, retorna undefined', () => {
-    let parametro = 0;
-    expect(circle(parametro)).toEqual(undefined);
+    expect(circle()).toEqual(undefined);
   });
 
   it('Verificar se a função retorna o valor circunferência correta para um círculo de raio 2', () => {
