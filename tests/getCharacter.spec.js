@@ -42,14 +42,47 @@ Retorno:
 */
 
 describe('9 - Implemente os casos de teste da função `getCharacter`', () => {
-  it('Verifica se a função `getCharacter` retorna o objeto do personagem corretamente.', () => {
-    fail('Teste vazio!');
-    // ESCREVA SEUS TESTES ABAIXO:
-    // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
-    // Teste se a função retorna o objeto correto para o parâmetro 'Arya',
-    // Teste se a função retorna o objeto correto para o parâmetro 'Brienne',
-    // Teste se a função retorna o objeto correto para o parâmetro 'Melissandre',
-    // Teste se o parâmetro não é Case Sensitive, ou seja, independente de conter letras maiúsculas ou minúsculas retorna o mesmo objeto relativo a ele.
-    // Teste se ao passar um nome que não está na tabela, a função retorna undefined.
+  it('Verifica se a função `getCharacter`, quando não recebe nenhum parâmetro, retorna undefined.', () => {
+    expect(getCharacter()).toBe(undefined);
+  });
+
+  it('Verfica se a função retorna o objeto correto para o parâmetro Arya', () => {
+    const result = getCharacter('Arya');
+    expect(result.name).toBe('Arya Stark');
+    expect(result.class).toBe('Rogue');
+  });
+
+  it('Verfica se a função retorna o objeto correto para o parâmetro Brienne', () => {
+    const result = getCharacter('Brienne');
+    expect(result.name).toBe('Brienne Tarth');
+    expect(result.class).toBe('Knight');
+  });
+
+  it('Verfica se a função retorna o objeto correto para o parâmetro Melissandre', () => {
+    const result = getCharacter('Melissandre');
+    expect(result.name).toBe('Melissandre');
+    expect(result.class).toBe('Necromancer');
+  });
+
+  it('Verfica se o parâmetro não é Case Sensitive', () => {
+    const result1 = getCharacter('arya');
+    expect(result1.class).toBe('Rogue');
+    const result2 = getCharacter('ARYA');
+    expect(result2.class).toBe('Rogue');
+  });
+  it('Verfica se ao passar um nome que não está na tabela, a função retorna undefined', () => {
+    const result = getCharacter('Rebeca');
+    expect(result).toBe(undefined);
   });
 });
+
+// const retorno = productDetails('Alcool gel', 'Máscara');
+// expect(Array.isArray(retorno)).toEqual(true);
+
+// ESCREVA SEUS TESTES ABAIXO:
+// Teste se a função, quando não recebe nenhum parâmetro, retorna undefined. OK!
+// Teste se a função retorna o objeto correto para o parâmetro 'Arya', OK!
+// Teste se a função retorna o objeto correto para o parâmetro 'Brienne', ok!
+// Teste se a função retorna o objeto correto para o parâmetro 'Melissandre', OK!
+// Teste se o parâmetro não é Case Sensitive, ou seja, independente de conter letras maiúsculas ou minúsculas retorna o mesmo objeto relativo a ele.
+// Teste se ao passar um nome que não está na tabela, a função retorna undefined.
